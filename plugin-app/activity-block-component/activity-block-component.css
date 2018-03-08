@@ -1,0 +1,122 @@
+.activity-block {
+  display: block;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto 8px;
+  background: #fff;
+  border: 1px solid #C4CED7;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.activity-block-header {
+  padding: 8px 8px;
+  display: flex;
+  align-items: flex-start;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.activity-block-header .activity-status {
+  padding: 4px 8px;
+  border-radius: 6px;
+  min-height: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 auto;
+  text-align: center;
+}
+.activity-block-header .activity-status.positive {
+  color: #f0fced;
+  background: #81bb5f;
+}
+.activity-block-header .activity-status.neutral {
+  color: #e6f7fc;
+  background: #13b6cf;
+}
+.activity-block-header .activity-status.negative {
+  color: #fcf7e8;
+  background: #ed813e;
+}
+.activity-block-header .activity-status.disabled {
+  color: #f0f0f0;
+  background: #a0a0a0;
+}
+.activity-block-header .activity-status .status-text {
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 18px;
+  flex: 0 0 auto;
+}
+.activity-block-header .activity-status .status-details {
+  font-size: 14px;
+  line-height: 16px;
+  flex: 0 0 auto;
+}
+.activity-block-header:active {
+  background: #0572CE;
+  color: #fff;
+}
+.activity-block-header:active .subtitle,
+.activity-block-header:active .address {
+  color: #fff;
+}
+.activity-block-header:active .highlight {
+  background: none;
+  color: #fff;
+}
+.activity-block-header:active .activity-status {
+  background: #fff !important;
+  color: #0572CE !important;
+}
+.activity-block-title {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+.activity-block-title .main-title {
+  display: block;
+  overflow: hidden;
+  line-height: 22px;
+  font-size: 18px;
+  text-overflow: ellipsis;
+}
+.activity-block-title .address {
+  overflow: hidden;
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  color: #309fdb;
+  padding-right: 8px;
+}
+.activity-block-edit-panel {
+  margin: 0px 8px 8px;
+}
+.activity-block-meter-reading-wrapper {
+  margin-top: 8px;
+}
+.activity-block-meter-reading-wrapper .meter-reading-error {
+  color: #e73900;
+  padding: 8px;
+}
+.activity-block-actions {
+  display: flex;
+  margin: 8px 0 0;
+}
+.activity-block-actions .left-side,
+.activity-block-actions .right-side {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+}
+.activity-block-actions .left-side {
+  justify-content: flex-start;
+  text-align: left;
+}
+.activity-block-actions .right-side {
+  justify-content: flex-end;
+  text-align: right;
+}
+.activity-block-actions a {
+  padding: 0 8px;
+}
