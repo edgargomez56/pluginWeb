@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script type="text/javascript" src="js/knockout-3.4.2.js"></script>
+    </head>
+    <body>
+        <h1>Ejemplo MVVM</h1>
+        <ul>
+            <li>El nombre es <span  data-bind="text:nombre"></span></li>
+            <li>El apellido es <span  data-bind="text:apellidos"></span></li>
+            <li>El edad es <span  data-bind="text:edad"></span></li>
+        </ul>
+          <script type="text/javascript">
+            var PersonaViewModel = {
+                nombre: "Juan Pablo",
+                apellidos: "Pérez Nuñez",
+                edad: 1
+                };
+            ko.applyBindings(PersonaViewModel);
+        </script>
+    </body>
+</html>
