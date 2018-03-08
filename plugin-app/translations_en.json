@@ -1,0 +1,27 @@
+{
+  "search-input-placeholder": "Meter number",
+  "meter-reading-input-placeholder": "Meter reading",
+  "search-no-results-text": "No results found",
+  "search-not-shown-results-text": "And #NUMBER# more",
+  "last-completed-activity-title": "Previously done:",
+  "next-activities-title": "Pending meters:",
+  "completed-meter-reading-prefix": "Completed:",
+
+  "button-details-title": "Details",
+  "button-apply-title": "Apply",
+  "button-submit-title": "Submit (#NUMBER#)",
+
+  "activity-status-complete": "Completed",
+  "activity-status-started": "Started",
+  "activity-status-deleted": "Deleted",
+  "activity-status-suspended": "Suspended",
+  "activity-status-cancelled": "Done",
+  "activity-status-notdone": "Not done",
+
+
+  "error-validation-incorrect-value": "Incorrect value",
+  "error-popup-title": "Error",
+  "error-unsupported-screen": "Plugin could be placed only on Activity List",
+  "error-unexpected": "Unexpected error",
+  "error-unable-to-update": "Unable to update following Activities:"
+}

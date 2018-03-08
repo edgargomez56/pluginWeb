@@ -1,0 +1,38 @@
+<div class="main-container" data-bind="visible: isLoaded, css: {'has-bottom-panel': isSubmitAvailable, 'search-mode': !searchQueryIsEmpty()}">
+    <div class="search-input-wrapper" data-bind="css: { 'is-scrolled': isScrolled }">
+        <div class="search-input-block">
+            <input type="search" class="text-input" id="search-query" data-bind="textInput: searchQuery, attr: { placeholder: i18n('search-input-placeholder') }">
+        </div>
+    </div>
+    <!-- ko if: searchQueryIsEmpty -->
+    <div class="welcome-block">
+        <!-- ko if: lastCompletedActivityViewModel -->
+        <div class="last-completed-activity-wrapper" data-bind="with: lastCompletedActivityViewModel()">
+            <div class="last-completed-activity-title" data-bind="text: $parent.i18n('last-completed-activity-title')"></div>
+            <activity-block params="activity: activity, attributeDescription: $parent.attributeDescription, meterReadingEntered: $parent.meterReadingEntered.bind($parent), activityDetailsRequested: $parent.activityDetailsRequested.bind($parent), blockExpandedSignal: $parent.blockExpandedSignal, submitUnlockedSignal: $parent.submitUnlockedSignal, submitBlockedSignal: $parent.submitBlockedSignal"></activity-block>
+        </div>
+        <!-- /ko -->
+
+        <div class="recommended-activities-wrapper" data-bind="visible: nextActivities().length">
+            <div class="recommended-activities-title" data-bind="text: i18n('next-activities-title')"></div>
+            <div class="recommended-activities" data-bind="foreach: { data: nextActivities, as: 'item' }">
+                <activity-block params="activity: item, attributeDescription: attributeDescription, meterReadingEntered: meterReadingEntered.bind($data), activityDetailsRequested: activityDetailsRequested.bind($data), blockExpandedSignal: blockExpandedSignal, submitUnlockedSignal: submitUnlockedSignal, submitBlockedSignal: submitBlockedSignal"></activity-block>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <div class="no-results" data-bind="visible: !searchQueryIsEmpty() && !searchResults().length, text: i18n('search-no-results-text')"></div>
+    <ul class="search-results" data-bind="visible: searchResults().length, foreach: { data: searchResults, as: 'item'}">
+        <activity-block params="activity: item, attributeDescription: attributeDescription, searchString: searchQueryDebounced, meterReadingEntered: meterReadingEntered.bind($data), activityDetailsRequested: activityDetailsRequested.bind($data), blockExpandedSignal: blockExpandedSignal, submitUnlockedSignal: submitUnlockedSignal, submitBlockedSignal: submitBlockedSignal"></activity-block>
+    </ul>
+    <div class="not-shown-results-number" data-bind="visible: notShownSearchResults, text: notShownSearchResults"></div>
+
+    <div class="bottom-panel is-scrolled" data-bind="visible: isSubmitAvailable">
+        <div class="bottom-panel-inner">
+            <button class="button button-green" data-bind="text: buttonSubmitText, click: submitChanges"></button>
+        </div>
+    </div>
+</div>
+<div class="processing-overlay" data-bind="visible: isProcessing">
+
+</div>
