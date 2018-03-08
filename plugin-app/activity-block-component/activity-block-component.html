@@ -1,0 +1,41 @@
+<div class="activity-block" data-bind="css: { 'edit-mode': isExpanded }">
+    <div class="activity-block-header" data-bind="click: toggleEditor">
+        <div class="activity-block-title">
+            <span class="main-title" data-bind="textHighlighted: title, searchString: searchString"></span>
+            <span class="address" data-bind="text: address, visible: address"></span>
+        </div>
+        <div class="activity-status" data-bind="visible: status, css: statusClass">
+            <div class="status-text" data-bind="text: status"></div>
+            <div class="status-details" data-bind="text: statusDetails, visible: statusDetails"></div>
+        </div>
+    </div>
+    <!-- ko if: isExpanded -->
+    <div class="activity-block-edit-panel">
+        <div class="activity-block-meter-reading-wrapper" data-bind="visible: isActivityEditable">
+            <input class="text-input meter-reading-input" type="number"
+                   data-bind="textInput: enteredMeterReading,
+                              enterPressed: applyMeterReading,
+                              escapePressed: collapseEditor,
+                              event: {
+                                focus: onInputFocus,
+                                blur: onInputBlur
+                              },
+                              attr: { placeholder: i18n('meter-reading-input-placeholder') }"/>
+            <div class="meter-reading-error" data-bind="text: meterReadingError, visible: meterReadingError"></div>
+        </div>
+        <div class="activity-block-actions">
+            <div class="left-side">
+                <a data-bind="click: goToDetails, text: i18n('button-details-title')"></a>
+            </div>
+            <div class="right-side">
+                <button class="button button-green"
+                        data-bind="css: { disabled: isApplyButtonDisabled },
+                                   click: applyMeterReading,
+                                   text: i18n('button-apply-title'),
+                                   visible: isActivityEditable">
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>
